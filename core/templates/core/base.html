@@ -1,0 +1,87 @@
+{% load static %}
+<!doctype html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+
+        <title>{% block title %} {%endblock%} | Sklep</title>
+    </head>
+
+    <body>
+        <nav class="nawigacja">
+                
+
+            <div class="logo">
+                <a href="/" class=""><strong>Sklep</strong></a>
+            </div>
+            <div class="przycisk">
+                <a href="{% url 'item:items' %}" class=""> Szukaj</a>
+            </div>
+            {% if request.user.is_authenticated %}
+                
+                <div class="przycisk">
+                    <a href="{% url 'item:new' %}" class=""> Nowy przedmiot</a>
+                </div>
+                <div class="register">
+                    <a href="{% url 'conversation:inbox' %}" class="registerb"> Skrzynka mailowa</a>
+                </div>
+                <div class="login">
+                    <a href="{% url 'dashboard:index' %}" class="loginb"> Twój profil</a>
+                </div>
+                <div class="login">
+                    <a href="{% url 'core:logout' %}" class="loginb"> Wyloguj się</a>
+                </div>
+                <div style="clear:both;"></div>
+            {% else %}
+                <div class="register">
+                    <a href="{% url 'core:signup' %}" class="registerb"> Utwórz konto</a>
+                </div>
+                <div class="login">
+                    <a href="{% url 'core:login' %}" class="loginb"> Zaloguj się</a>
+                </div>
+                
+            {% endif %}
+            <div style="clear:both;"></div>
+
+        </nav>
+        <main>
+
+            <div class="tytuł">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+
+            <footer>
+                <div class="stopka">
+                    <div style="float: left; padding-top:20px;">
+                        <h3 style="color: #727272"><strong>O nas</strong></h3>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod tellus arcu.<p>
+                    </div>
+            
+
+                    <div class="stopkap">
+                        <h3 style="color: #727272"><strong>Menu</strong></h3>
+                        <ul>
+                            <li><a href="#">O nas</a></li>
+                            <li><a href="{% url 'core:kontakt' %}">Kontakt</a></li>
+                            <li><a href="#">Prywatność</a></li>
+                            <li><a href="#">Zasady nadużycia</a></li>
+                        </ul>
+                    </div>
+                    <div style="clear: both;">
+                    </div>
+                </div>    
+            </footer>
+
+
+
+        
+    </body>
+</html>

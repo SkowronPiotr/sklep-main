@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+
+{% block title %}Skrzynka wiadomości{% endblock title %}Skrzynka wiadomości
+
+{% block content %}
+
+<h1> </h1>
+
+<div class="dymek">
+    {% for conversation  in conversations %}
+        <a class="linkdymka" href="{% url 'conversation:detail' conversation.id %}">
+            <div style="background-color: #cdcdcd; border-radius: 25px; padding:10px;margin-top:30px">
+                <div class="poledymka">
+                    <img style="width: 100px; height: 100px;" src="{{ conversation.item.image.url }}">
+                </div>
+
+                <div>
+                     {% for member in conversation.members.all %}
+                        {% if member != request.user %}
+                            <p><strong>{{ member.username }}</strong> | {{ conversation.modified_at}}</p>
+                            <p>{{ conversation.item.name }}</p>
+                        {% endif %}
+                     {% endfor %}
+                </div>                
+            </div>
+        </a>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}
+

@@ -1,0 +1,46 @@
+{% extends "core/base.html" %}
+
+{% block title%} Witaj {%endblock%}
+
+{% block content %}
+    <div class="">
+        <h2 style="text-align: center; margin-bottom: 20px;">Najnowsze przedmioty</h2>
+
+        <div class="kontencik">
+            {% for item in items %}
+                <div class="obiekt">
+                    <div>
+                        <a href="{% url 'item:detail' item.id %}">
+                            <div class="obiektzdj">
+                                <img src="{{ item.image.url}}" height="550" width="460">
+                            </div>
+                            <div class="opis">
+                                <h2> {{ item.name }}</h2>
+                                <p> Cena: {{ item.price}} </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="kategoriemenu">
+        <h2 style="text-align: center; margin-bottom: 20px;">Kategorie</h2>
+
+        <div class="kategorie">
+            {% for category in categories %}
+                <div class="kategoria">
+                    <a href="/items/">
+                        <div>
+                            <h2> {{ category.name }}</h2>
+                            <p> Ilość przedmiotów: {{ category.items.count}}</p>
+                        </div>
+                    </a>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

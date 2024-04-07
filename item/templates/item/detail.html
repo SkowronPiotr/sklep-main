@@ -1,0 +1,60 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block content %}
+<div>
+    <div class="itemwrapper">
+        <div>
+            <img src="{{ item.image.url }}" style="width: 550px; height: 700px;">
+        </div>
+
+        <div id="opis">
+            <h1> {{item.name}} </h2>
+            <p style="margin-top: 20px; padding: 5px;"> <strong>Cena: </strong> {{ item.price}} </p>
+            <p style="padding: 5px;"> <strong>Sprzedawca: </strong> {{ item.created_by.username}} </p>
+            
+            {% if item.description%}
+            <p id="tekstopisu"style="padding: 5px;"> <strong>Opis: </strong><br><br>{{ item.description }} </p>
+            {% endif %}
+
+            {% if request.user == item.created_by %}
+                <div class="boxopis">
+                    <p style="font-size: 1.5em; margin-bottom: 20px;"> To twój przedmiot! </p>
+                    <div id="odstep">
+                        <a id="usun" href="{% url 'item:delete' item.id %}">Usuń</a>
+                        <a id="edytuj" href="{% url 'item:edit' item.id %}">Edytuj</a>
+                    </div>
+                </div>
+            {% else%}
+
+            <a id="kontaktzesprzedawca" href="{% url 'conversation:new' item.id %}">Skontaktuj się ze sprzedawcą</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+<div class="boxrelated" style="background-color: #efefef;">
+    <h2 style="text-align: center;">Powiązane przedmioty</h2>
+
+    <div class="boxrelated2">
+        {% for item in related_items %}
+            <div>
+                <a href="{% url 'item:detail' item.id %}">
+                    <div id="obrazek">
+                        <img src="{{ item.image.url}}" style="width: 186px; height: 115px;">
+                    </div>
+                    <div>
+                        <h2> {{ item.name }}</h2>
+                        <p> Cena: {{ item.price}} </p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        {% if not related_items %}
+            <div style="margin: 10px;">
+                <p>Brak powiązanych przemiotów</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

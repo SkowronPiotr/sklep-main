@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Wyszukiwanie{% endblock %}
+
+{% block content %}
+
+            <form method="get" action="{%url 'item:items' %}">
+                <input name="query" type="text" value="{{ query }}" placeholder="Znajdź swój rower, mebel lub coś tam" >
+                
+                <button class="potwierdz"> Szukaj </button>
+            </form>
+
+            <hr>
+
+            <h2 style="text-align: center; margin-bottom: 20px;">Kategorie</h2>
+            <ul>
+                {% for category in categories %}
+                    <li {% if category.id == category_id %} style="" {% endif %}>
+                        <a href="{% url 'item:items' %}?query={{ query }}&category={{ category.id }}"> {{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            
+            <hr>
+
+            <div class="wyczysc">
+                <a href="{% url 'item:items' %}">Wyczyść filtry</a>
+            </div>
+ 
+            <div>
+                {% for item in items %}
+                    <div class="obiekt">
+                        <a href="{% url 'item:detail' item.id %}">
+                            <div "obiektzdj">
+                                <img src="{{ item.image.url}}" height="550" width="460">
+                            </div>
+                            <div class="opis">
+                                <h2> {{ item.name }}</h2>
+                                <p> Cena: {{ item.price}} </p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+
+{% endblock %}

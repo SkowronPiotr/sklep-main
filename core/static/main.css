@@ -1,0 +1,434 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 90%;
+    margin: auto;
+    background-color: rgb(255, 255, 255);
+}
+a:link
+{
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover
+{
+    color: #909090;
+
+}
+.nawigacja > a:active
+{
+    color: #ffffff;
+}
+.logo
+{
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    float: left;
+    width: 50px;
+    height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    color: black;
+    margin-top: 10px;
+    border-radius: 15px;
+}
+.logo a
+{
+    color: #000;
+}
+.logo a:hover
+{
+    color: #909090;
+    background-color: #eeeeee;
+}
+.logo:hover
+{
+    background-color: #eeeeee;
+}
+.przycisk
+{
+    display: block;
+    text-align: center;
+    border-radius: 15px;
+    float: right;
+    min-width: 50px;
+    min-height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    color: black;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.przycisk a
+{
+    color: #000;
+}
+.przycisk a:hover
+{
+    color: #cdcdcd;
+}
+.przycisk:hover
+{
+    color: rgb(94, 92, 92);
+    border-bottom: solid;
+    border-bottom-left-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+main
+{
+    text-align: justify;
+    padding: 20px;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-bottom: 50px;
+    background-color: #dedede;
+    border-radius: 15px;
+}
+.obiekt
+{
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+    border-radius: 15px;
+    color: #000;
+    
+}
+.obiekt a
+{
+    color: #000;
+}
+.obiekt a:hover
+{
+    color: #909090;
+}
+.opis
+{
+    background-color: #efefef;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.obiektzdj
+{
+    float: left;
+    transition: transform 0.2s ease-in-out;
+}
+.obiektzdj:hover
+{
+    transform: scale(0.9);
+}
+footer
+{
+    background-color: #172227;
+    width: 100%;
+    color: #6f6a6a;
+    padding: 10px;
+}
+.stopkap
+{
+    float: right;
+    padding-top:20px;
+    padding-right:10px;
+}
+.stopkap a
+{
+    color: rgb(0, 205, 113);
+}
+#pawel
+{
+    background-color: #000;
+
+}
+.registerb
+{
+    text-align: center;
+    border-radius: 15px;
+    float: right;
+    min-width: 50px;
+    min-height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(0, 205, 113);
+    margin-left: 10px;
+    color: #fff;
+    margin-top: 10px;
+}
+.registerb:hover, .potwierdz:hover
+{
+    color: #000;
+}
+.login
+{
+    text-align: center;
+    border-radius: 15px;
+    float: right;
+    min-width: 50px;
+    min-height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(94, 92, 92);
+    margin-left: 10px;
+    color: #fff;
+    margin-top: 10px;
+}
+.login a
+{
+    color: white;
+}
+.loginb
+{
+    color:white;
+}
+.loginb:hover
+{
+    color: rgb(0, 0, 0);
+}
+.registerb:hover
+{
+    color: rgb(0, 0, 0);
+}
+.nawigacja a
+{
+    text-decoration: none;
+    display: block;
+}
+nav
+{
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-bottom: solid #cdcdcd;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+ul
+{
+    list-style-type: none;
+}
+ul a
+{
+    text-decoration: none;
+    color: #58ffa9;
+}
+ul a:hover
+{
+    color: #6f6a6a;
+}
+.kategoriemenu
+{
+    margin-top: 80px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: #efefef;
+    text-align: center;
+}
+.kategorie a
+{
+    color: #000;
+}
+.kategorie a:hover
+{
+    color: rgb(94, 92, 92);
+}
+.kategorie
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin-top: 0;
+    list-style: none;
+}
+.kategoria
+{
+    padding: 10px;
+    width: 230px;
+    height: 115px;
+    float: left;
+    background-color: #dedede;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    line-height: 60px;
+    transition: transform 0.2s ease-in-out;
+}
+.kategoria:hover
+{
+    transform: scale(1.1);
+}
+.kontencik
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.itemwrapper
+{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+}
+#opis
+{
+    background-color: #efefef;
+    width: 40%;
+    padding: 20px;
+    border-radius: 30px;
+}
+#tekstopisu
+{
+    margin-bottom: 55px;
+    padding-bottom: 10px;
+    background-color: #dddddd;
+    border-radius: 15px;
+}
+#kontaktzesprzedawca
+{
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 15px;
+    width: 50px;
+    height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(0, 205, 113);
+    color: #fff;
+}
+#usun
+{
+    text-align: center;
+    border-radius: 15px;
+    width: 50px;
+    height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(0, 205, 113);
+    color: #fff;
+}
+#edytuj
+{
+    text-align: center;
+    border-radius: 15px;
+    width: 50px;
+    height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #ff1d1d;
+    color: #fff;
+}
+.boxopis
+{
+    padding: 10px;
+    background-color: #dddddd;
+    border-radius: 15px;
+    text-align: center;
+}
+#odstep
+{
+    margin-bottom: 20px;
+}
+.boxrelated
+{
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    
+}
+.boxrelated2
+{
+    background-color: #efefef;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.boxrelated2 a
+{
+    color: #000;
+}
+.boxrelated2 a:hover
+{
+    color: rgb(94, 92, 92);
+}
+#obrazek
+{
+    margin: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+#obrazek:hover
+{
+    transform: scale(1.1);
+}
+.potwierdz
+{
+    text-align: center;
+    border-radius: 15px;
+    min-width: 50px;
+    min-height: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(0, 205, 113);
+    margin-left: 10px;
+    color: #fff;
+    margin-top: 10px;
+}
+.dymek
+{
+    width: 50%;
+    margin: auto;
+    border-radius: 25px;
+    padding: 30px;
+    color: black;
+    background-color: #5e5e5e;
+    
+}
+.linkdymka
+{
+    color: black;
+}
+.wyczysc
+{
+    text-align: center;
+    border-radius: 15px;
+    width: 80px;
+    height: auto;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(94, 92, 92);
+    color: #fff;
+    margin-top: 10px;
+}
+.wyczysc a
+{
+    color: white;
+}
+.wyczysc a:hover
+{
+    color: rgb(0, 0, 0);
+}
+input[type=text]
+{
+    width: 300px; 
+    background-color: white; 
+    color: #666; 
+    border: 2px solid #ddd; 
+    border-radius: 15px; 
+    font-size: 20px; 
+    padding: 10px;
+    margin-bottom: 10px;
+}

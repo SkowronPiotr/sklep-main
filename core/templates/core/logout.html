@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block title %} Wyloguj się {% endblock %}
+
+{% block content %}
+{% if  request.user.is_authenticated %}
+<div>
+    <h1>Wyloguj się</h1>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+        <p>Czy chcesz się wylogować?</p>
+
+        <button type="submit">Tak, wyloguj</button>
+    </form>
+</div>
+{% else %}
+<p>Nie jesteś zalogowany</p>
+<p>Czy chciałbyś się zalogować?<a href="{% url 'core:login' %}"> zaloguj </a></p>
+{% endif %}
+{% endblock %}

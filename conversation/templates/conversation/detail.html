@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+
+{% block title %}Konwersacja{% endblock title %}
+
+{% block content %}
+
+<h1>Konwersacja</h1>
+
+<div>
+    {% for message  in conversation.messages.all %}
+            <div {% if message.created_by == request.user %}style="background-color:#76e2ff; border-radius: 20px; padding:10px; margin:10px; text-align: right;"{% else %} style="background-color:#acacac; border-radius: 20px; padding:10px; margin:10px;"{% endif %}>
+                <div>
+                    <p><strong>{{ message.created_by.username }}</strong>@ {{ message.created_at }}</p>
+                    <p>{{ message.content }}</p>
+                </div>
+            </div>
+    {% endfor %}
+</div>
+
+<form method="post" action=".">
+    {% csrf_token %}
+
+   {{ form.as_p }}
+
+   
+   <button class="potwierdz">Wyślij</button>
+</form>
+{% endblock content %}
+
