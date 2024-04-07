@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 
+
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'login',
@@ -11,6 +12,7 @@ class LoginForm(AuthenticationForm):
         'placeholder': 'Hasło',
         'style': 'width: 300px; background-color: white; color: #666; border: 2px solid #ddd; border-radius: 15px; font-size: 20px; padding: 10px;',
     }))
+
 
 class SignupForm(UserCreationForm):
     class Meta:
@@ -26,10 +28,10 @@ class SignupForm(UserCreationForm):
         'style': 'width: 300px; background-color: white; color: #666; border: 2px solid #ddd; border-radius: 15px; font-size: 20px; padding: 10px;',
     }))
     password1 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'Password 1',
+        'placeholder': 'Twoje hasło',
         'style': 'width: 300px; background-color: white; color: #666; border: 2px solid #ddd; border-radius: 15px; font-size: 20px; padding: 10px;',
     }))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
-        'placeholder': 'Repeat Password',
+        'placeholder': 'Powtórz hasło',
         'style': 'width: 300px; background-color: white; color: #666; border: 2px solid #ddd; border-radius: 15px; font-size: 20px; padding: 10px;',
     }))
